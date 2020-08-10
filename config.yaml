@@ -1,0 +1,4 @@
+dirs:
+  content: content
+  templates: templates
+  cache: false

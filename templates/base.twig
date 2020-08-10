@@ -1,0 +1,15 @@
+<ul>
+	{% for section in app.getSections %}
+	<li>
+		{{ section.getTitle }}
+
+		{% if section.hasChildren %}
+		<ul>
+			{% for child in section.getChildren %}
+			<li>{{ child.getTitle }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</li>
+	{% endfor %}
+</ul>

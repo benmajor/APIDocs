@@ -1,0 +1,8 @@
+{
+    "require": {
+        "twig/twig": "^3.0",
+        "erusev/parsedown": "^1.7",
+        "webuni/front-matter": "^1.1",
+        "adbario/php-dot-notation": "^2.2"
+    }
+}
