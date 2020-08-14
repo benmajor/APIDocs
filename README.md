@@ -4,6 +4,12 @@ This is a simple PHP tool for documenting APIs without any of the hassle that ty
 
 The system uses YAML files and Markdown, along with Twig templates for easy modification and customisation. Please feel free to download and use within your own projects *without warranty*.
 
+### Installation:
+
+1. Download the files from this repo
+2. Create a content directory (typically `content/`) in the project root
+3. Install dependencies via Composer by running `$ composer i`.
+
 ### Adding content:
 
 Defining sections is easy, and we use YAML files to add sections and sub-categories to the documentation. These files should be placed in the `content/` directory by default, but this can be changed by modifying by changing the various settings within `config.yaml`. 
