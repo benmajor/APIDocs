@@ -1,0 +1,22 @@
+    <aside id="sidebar" class="os-host-flexbox">
+        <header id="sidebar-header">
+            <div class="icon-brand">
+                <a href="#"><img src="assets/img/icon-brand-50.png" alt="Kolekto" class="icon-brand" /></a>
+            </div>
+            <div class="sidebar-search-form">
+                <div class="sidebar-search-field">
+                    <input type="search" placeholder="Search" />
+                    <ion-icon name="search"></ion-icon>
+                </div>
+            </div>
+            <div id="sidebar-mobile-nav-reveal">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+        <div id="sidebar-content">
+            {{ app.outputSidebar|raw }}
+        </div>
+    </aside>

@@ -1,0 +1,191 @@
+#sidebar {
+    border-right: 1px solid @color-border;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    left: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: @width-sidebar;
+    
+    ul.sidebar-menu {
+        list-style: none;
+        margin: 20px 20px 0 0;
+        padding: 0;
+        
+        li {
+            font-size: 13px;
+        }
+        
+        a {
+            color: #697386;
+            display: block;
+            font-weight: 600;
+            line-height: 35px;
+            padding-left: 20px;
+            text-decoration: none;
+            
+            &:hover {
+                color: #000
+            }
+        }
+        
+        li.sidebar-item-active {
+            > a {
+                background: #f5fbff;
+                border-top-right-radius: 25px;
+                border-bottom-right-radius: 25px;
+                color: @color-link;
+            }
+            
+            ul.sidebar-child {
+                display: block;
+            }
+        }
+        
+        ul.sidebar-child {
+            display: none;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            
+            li {
+                font-size: 90%;
+                
+                a {
+                    padding-left: 35px;
+                }
+            }
+        }
+    }
+}
+
+#sidebar-header {
+    display: flex;
+    padding: 15px 20px;
+    
+    .icon-brand {
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 28px;
+        margin-right: 5px;
+        
+        a {
+            display: block;
+            opacity: .95;
+            
+            -webkit-transition: opacity .2s ease;
+               -moz-transition: opacity .2s ease;
+                    transition: opacity .2s ease;
+                    
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    
+    .sidebar-search {
+        flex-grow: 1;
+    }
+    
+    .sidebar-search-field {
+        height: 30px;
+        position: relative;
+        
+        input {
+            background: #f7fafc;
+            border: 1px solid #ededed;
+            border-radius: 4px;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 13px;
+            padding: 0 15px 0 30px;
+            width: 100%;
+            
+            -webkit-transition: all .2s ease;
+               -moz-transition: all .2s ease;
+                    transition: all .2s ease;
+            
+            &::-webkit-input-placeholder { color: rgba(0,0,0,.5); }
+            &::-moz-placeholder { color: rgba(0,0,0,.5); }
+            &:-ms-input-placeholder { color: rgba(0,0,0,.5); }
+            &:-moz-placeholder { color: rgba(0,0,0,.5); }
+        }
+        
+        input + ion-icon {
+            color: #aaa;
+            font-size: 18px;
+            left: 10px;
+            position: absolute;
+            top: 5px;
+            
+            -webkit-transition: all .2s ease;
+               -moz-transition: all .2s ease;
+                    transition: all .2s ease;
+        }
+        
+        input:hover {
+            border-color: rgba(0,0,0,.1);
+        }
+        
+        input:focus {
+            border-color: rgba(0,0,0,.2);
+            outline: none;
+            
+            &::-webkit-input-placeholder { color: rgba(0,0,0,.35); }
+            &::-moz-placeholder { color: rgba(0,0,0,.35); }
+            &:-ms-input-placeholder { color: rgba(0,0,0,.35); }
+            &:-moz-placeholder { color: rgba(0,0,0,.35); }
+            
+            + i {
+                color: #666;
+            }
+        }
+    }
+}
+
+
+.sidebar-group {
+    margin-top: 10px;
+    
+    .sidebar-group-title {
+        color: #333;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 600;
+        margin: 0;
+        padding: 10px 20px;
+        position: relative;
+        text-transform: uppercase;
+
+        ion-icon {
+            color: #ccc;
+            float: right;
+            font-size: 17px;
+        }
+    }
+    
+    ul.sidebar-menu {
+        display: none;
+        margin-top: 0 !important;
+    }
+    
+    &.sidebar-group-in {
+        .sidebar-group-title {
+            ion-icon {
+                -webkit-transform: rotate(180deg);
+            }
+        }
+        
+        ul.sidebar-menu {
+            display: block;
+        }
+    }
+    
+    &.sidebar-group-active {
+        ul.sidebar-menu {
+            display: block;
+        }
+    }
+}

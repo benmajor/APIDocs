@@ -1,0 +1,15 @@
+			<div class="reference-data">                  
+				<div class="reference-data-title">{{ section.sidebar.title }}</div>
+				<div class="reference-data-content">
+					<table>
+						<tbody>
+							{% for title, value in section.sidebar.content %}
+							<tr>
+								<th>{{ title }}</th>
+								<td>{{ value }}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>

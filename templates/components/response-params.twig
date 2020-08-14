@@ -1,0 +1,27 @@
+                    {% import 'macros/param-list.twig' as macros %}
+
+                    <div class="argument-list">
+						<h3 class="argument-list-title">Response parameters:</h3>
+
+						{% for param in section.responseParams %}
+						<div class="argument-list-item">
+                    		<h5 class="argument-list-item-title">
+                    			<code>{{ param.name }}</code> 
+                    			<span class="tag value">{{ param.type }}</span>
+                    		</h5>
+                    		{{ param.description|markdown_to_html }}
+
+                            {% if param.children %}
+                            <div class="argument-list-item-child-list collapsed">
+                                <h6 class="argument-list-item-child-list-title">
+                                    <ion-icon class="icon" name="add-outline"></ion-icon> 
+                                    <span>Show child arguments</span>
+                                </h6>
+                                <div class="argument-list-item-child-list-content">
+                                    {{ macros.param_children(param.children) }}
+                                </div>
+                            </div>
+                            {% endif %}
+                  		</div>
+						{% endfor %}
+					</div>

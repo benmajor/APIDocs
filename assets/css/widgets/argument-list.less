@@ -1,0 +1,159 @@
+.argument-list {
+    margin-top: 30px;
+}
+
+.argument-list-title {
+    border-bottom: 1px solid @color-border;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+}
+
+.argument-list-item {
+    border-bottom: 1px solid @color-border;
+    padding: 0 0 15px;
+    margin-bottom: 15px;
+    
+    &:last-child {
+        border-bottom: none;
+    }
+    
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.argument-list-item-title {
+    margin-bottom: 7px;
+    
+    code {
+        background: transparent;
+        border: none;
+        color: #333;
+        padding: 0;
+    }
+}
+
+// Argument list:
+.argument-list-item-enum-list,
+.argument-list-item-child-list {
+    border: 1px solid @color-border;
+    border-radius: 15px;
+    margin-top: -10px;
+}
+
+.argument-list-item-enum-list-title,
+.argument-list-item-child-list-title {
+    border-bottom: 1px solid @color-border;
+    color: #777;
+    font-size: 12px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0 15px;
+}
+
+.argument-list-item-enum-list-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+        border-bottom: 1px solid @color-border;
+        padding: 10px 15px;
+        
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+// Child items:
+.argument-list-item-child-list-title {
+    cursor: pointer;
+    
+    .icon {
+        display: block;
+        float: left;
+        font-size: 18px;
+        margin-right: 5px;
+        margin-top: 6px;
+        
+        -webkit-transition: all .2s ease;
+           -moz-transition: all .2s ease;
+                transition: all .2s ease;
+        
+        -webkit-transform: rotate(45deg);
+           -moz-transform: rotate(45deg);
+                transform: rotate(45deg);
+    }
+}
+
+.argument-list-item-child-list-value {
+    border-bottom: 1px solid @color-border;
+    padding: 10px 15px;
+    
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.argument-list-item-child-list-value-title {
+    font-size: 12px;
+    margin: 0 0 7px;
+    
+    code {
+        background: none;
+        border: none;
+        padding: 0;
+        
+        .muted {
+            color: @color-muted;
+        }
+    }
+}
+
+.argument-list-item-child-list-value-desc {
+    margin: 0;
+}
+
+.argument-list-item-child-list {
+    -webkit-transition: all .2s ease;
+       -moz-transition: all .2s ease;
+            transition: all .2s ease;
+            
+    .argument-list-item-child-list {
+        margin-top: 7px;
+    }
+}
+
+// Collapsed:
+.argument-list-item-child-list.collapsed {
+    border-radius: 15px;
+    clear: both;
+    float: left;
+    overflow: hidden;
+    
+    .argument-list-item-child-list-title {
+        border-bottom: none;
+        
+        .icon {
+            -webkit-transform: rotate(0deg);
+               -moz-transform: rotate(0deg);
+                    transform: rotate(0deg);
+        }
+    }
+    
+    .argument-list-item-child-list-content {
+        //display: none;
+    }
+}
+
+.argument-list-item-child-list .argument-list-item-child-list.collapsed {
+    display: inline-block;
+    float: none;
+}
+
+section.striped .argument-list-item-child-list {
+    background: rgba(255,255,255,.75);
+}

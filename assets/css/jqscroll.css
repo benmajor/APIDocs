@@ -1,0 +1,36 @@
+.jqscroll-inner {
+    margin-right: -35px;
+    max-height: 100%;
+    overflow: auto;
+    padding-right: 35px;
+}
+
+.jqscroll-container {
+    position: relative;
+}
+
+.jqscroll-trackbar {
+    background: transparent;
+    height: 100%;
+    padding: 5px 1px 5px 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+}
+
+.jqscroll-scrollbar {
+    background: rgba(0,0,0,.2);
+    border-radius: 50px;
+    position: relative;
+    opacity: 0;
+    width: 6px;
+    
+    -webkit-transition: opacity .2s ease;
+       -moz-transition: opacity .2s ease;
+            transition: opacity .2s ease;
+}
+
+.jqscroll-container:hover .jqscroll-scrollbar {
+    opacity: 1;
+}

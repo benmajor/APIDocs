@@ -1,0 +1,61 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+ul,
+ol,
+blockquote,
+table,
+dl,
+address,
+p {
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+.lead > p,
+p.lead {
+    font-size: 15px;
+}
+
+// Anchors:
+a {
+    color: @color-link;
+    font-weight: bold;
+    text-decoration: none;
+    
+    &:hover {
+        color: #333;
+    }
+}
+
+// Inline-code:
+code {
+    background: whiteSmoke;
+    border: 1px solid rgba(0,0,0,.05);
+    border-radius: 3px;
+    color: #000;
+    display: inline-block;
+    line-height: normal;
+    font-size: 13px;
+    padding: 0 3px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,.075);
+    margin: 50px 0 50px 100px;
+    
+    &.full-width {
+        margin-left: -75px;
+        margin-right: -150px;
+    }
+}

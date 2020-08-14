@@ -1,0 +1,24 @@
+{% macro param_children(children) %}
+    {% import _self as macros %}
+    {% for child in children %}
+    <div class="argument-list-item-child-list-value">
+        <h6 class="argument-list-item-child-list-value-title">
+            <code><span class="muted">{{ child.name }}</code>
+            <span class="tag value">{{ child.type }}</span>
+        </h6>
+        <p class="argument-list-item-child-list-value-desc">{{ child.description }}</p>
+
+        {% if child.children %}
+        <div class="argument-list-item-child-list collapsed">
+            <h6 class="argument-list-item-child-list-title">
+                <ion-icon class="icon" name="add-outline"></ion-icon> 
+                <span>Show child arguments</span>
+            </h6>
+            <div class="argument-list-item-child-list-content">
+                {{ macros.param_children(child.children) }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+{% endmacro %}

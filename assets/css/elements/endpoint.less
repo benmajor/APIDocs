@@ -1,0 +1,84 @@
+.endpoint {
+    background: #fff;
+    border: 1px solid @color-border;
+    border-radius: 3px;
+    display: flex;
+    font-family: monospace;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    padding: 5px;
+    position: relative;
+    
+    &:before {
+        color: @color-muted;
+        content: 'Endpoint:';
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        left: 0;
+        line-height: 20px;
+        position: absolute;
+        top: -24px;
+        text-transform: uppercase;
+    }
+}
+
+.endpoint-method,
+.endpoint-url {
+    padding: 3px 5px;
+}
+
+.endpoint-method {
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: right;
+    text-transform: uppercase;
+    width: 60px;
+    
+    &.endpoint-method-get { color: @color-method-get; }
+    &.endpoint-method-post { color: @color-method-post; }
+    &.endpoint-method-put { color: @color-method-put; }
+    &.endpoint-method-delete { color: @color-method-delete; }
+}
+
+.endpoint-url {
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
+    &:hover {
+        padding-right: 40px;
+        
+        .endpoint-url-copy {
+            opacity: 1;
+        }
+    }
+    
+    .endpoint-url-domain {
+        color: @color-muted;
+    }
+    
+    .endpoint-url-copy {
+        color: #aaa;
+        float: right;
+        font-family: 'Open Sans';
+        font-size: 11px;
+        font-weight: 600;
+        right: 5px;
+        line-height: normal;
+        opacity: 0;
+        position: absolute;
+        top: 3px;
+        text-transform: uppercase;
+        
+        -webkit-transition: all .2s ease;
+           -moz-transition: all .2s ease;
+                transition: all .2s ease;
+        
+        &:hover {
+            color: #333;
+        }
+    }
+}

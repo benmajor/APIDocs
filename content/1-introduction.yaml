@@ -1,1 +1,15 @@
 title: Introduction
+
+content:
+  "<div class='lead' markdown='1'>The Kolekto API is organized around the REST principles. Each endpoint accepts correctly encoded JSON or form parameters, along with a 
+  valid HTTP method and will return JSON-encoded responses, along with predictable HTTP status codes.</div>
+
+  <p>This documentation contains reference data for all endpoints that are currently supported by the API. It is intended for internal use only, but in the long term may be 
+  opened up if there is sufficient interest in developing external or third-party applications.</p>
+
+  <p>If you spot any errors, please contact Ben Major.</p>"
+
+sidebar:
+  title: "Base URL:"
+  lang: text
+  code: '{{ api_url }}'

@@ -19,6 +19,7 @@ class ComposerStaticInita003e30a76c0297b948ccaf5a70d516b
         ),
         'T' => 
         array (
+            'Twig\\Extra\\Markdown\\' => 20,
             'Twig\\' => 5,
         ),
         'S' => 
@@ -26,6 +27,10 @@ class ComposerStaticInita003e30a76c0297b948ccaf5a70d516b
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
+        ),
+        'M' => 
+        array (
+            'Minwork\\Helper\\' => 15,
         ),
         'A' => 
         array (
@@ -37,6 +42,10 @@ class ComposerStaticInita003e30a76c0297b948ccaf5a70d516b
         'Webuni\\FrontMatter\\' => 
         array (
             0 => __DIR__ . '/..' . '/webuni/front-matter/src',
+        ),
+        'Twig\\Extra\\Markdown\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/markdown-extra/src',
         ),
         'Twig\\' => 
         array (
@@ -54,6 +63,10 @@ class ComposerStaticInita003e30a76c0297b948ccaf5a70d516b
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
+        'Minwork\\Helper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/minwork/array/src',
+        ),
         'Adbar\\' => 
         array (
             0 => __DIR__ . '/..' . '/adbario/php-dot-notation/src',
@@ -63,6 +76,10 @@ class ComposerStaticInita003e30a76c0297b948ccaf5a70d516b
     public static $prefixesPsr0 = array (
         'P' => 
         array (
+            'ParsedownExtra' => 
+            array (
+                0 => __DIR__ . '/..' . '/erusev/parsedown-extra',
+            ),
             'Parsedown' => 
             array (
                 0 => __DIR__ . '/..' . '/erusev/parsedown',

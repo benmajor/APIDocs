@@ -1,0 +1,11 @@
+				<div class="endpoint-list">
+                	<div class="endpoint-list-title">Endpoints</div>
+                	<div class="endpoint-list-content">
+                		{% for child in section.getChildren %}
+                  		<a href="#{{ child.id }}" class="endpoint-list-item" title="{{ child.title }}">
+                  			<span class="endpoint-list-item-method endpoint-list-item-method-{{ child.requestMethod }}">{{ child.requestMethod }}</span>
+                  			<span class="endpoint-list-item-url">{{ child.endpoint }}</span>
+                  		</a>
+                  		{% endfor %}
+                  	</div>
+              	</div>

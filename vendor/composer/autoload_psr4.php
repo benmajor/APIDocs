@@ -7,9 +7,11 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Webuni\\FrontMatter\\' => array($vendorDir . '/webuni/front-matter/src'),
+    'Twig\\Extra\\Markdown\\' => array($vendorDir . '/twig/markdown-extra/src'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
+    'Minwork\\Helper\\' => array($vendorDir . '/minwork/array/src'),
     'Adbar\\' => array($vendorDir . '/adbario/php-dot-notation/src'),
 );

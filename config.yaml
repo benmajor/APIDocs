@@ -1,3 +1,7 @@
+twig:
+  site_name: Kolekto API Documentation
+  api_url: 'https://api.kolekto.io'
+
 dirs:
   content: content
   templates: templates

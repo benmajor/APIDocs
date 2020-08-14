@@ -1,0 +1,14 @@
+					<div class="argument-list">
+						<h3 class="argument-list-title">Request parameters:</h3>
+
+						{% for param in section.requestParams %}
+						<div class="argument-list-item">
+                    		<h5 class="argument-list-item-title">
+                    			<code>{{ param.name }}</code> 
+                    			{% if param.required %}<span class="tag required">required</span>{% endif %}
+                    			<span class="tag value">{{ param.type }}</span>
+                    		</h5>
+                    		{{ param.description|markdown_to_html }}
+                  		</div>
+						{% endfor %}
+					</div>

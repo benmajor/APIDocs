@@ -3,6 +3,9 @@
         "twig/twig": "^3.0",
         "erusev/parsedown": "^1.7",
         "webuni/front-matter": "^1.1",
-        "adbario/php-dot-notation": "^2.2"
+        "adbario/php-dot-notation": "^2.2",
+        "erusev/parsedown-extra": "^0.8.1",
+        "twig/markdown-extra": "^3.0",
+        "minwork/array": "^1.13"
     }
 }

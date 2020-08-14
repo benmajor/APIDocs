@@ -1,0 +1,10 @@
+				<div class="code-snippet">
+                  	<div class="code-snippet-title code-snippet-title-url">
+                  		<span class="request-method-{{ section.requestMethod }}">{{ section.requestMethod }}</span>
+                  		{{ section.endpoint }}
+              		</div>
+                  	<div class="code-snippet-code hilite curl">
+                    <pre><code>$ curl {{ API_URL }}{{ section.endpoint }} \{% for param in section.requestParams %}                               
+-d {{ param.name }}={{ param.value }}{% endfor %}</code></pre>
+                  </div>
+                </div>

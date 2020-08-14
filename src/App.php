@@ -6,6 +6,9 @@ use BenMajor\APIDocs\Exception\{ContentException};
 use Adbar\Dot;
 use Webuni\FrontMatter\FrontMatter;
 
+use Twig\Extra\Markdown\{MarkdownExtension,MarkdownRuntime,DefaultMarkdown};
+use Twig\RuntimeLoader\RuntimeLoaderInterface;
+
 class App
 {
 	protected $twig;
@@ -46,6 +49,23 @@ class App
 		);
 
 		$this->twig->addExtension(new \Twig\Extension\DebugExtension());
+		$this->twig->addExtension(new MarkdownExtension());
+		$this->twig->addRuntimeLoader(new class implements RuntimeLoaderInterface {
+		    public function load($class) {
+		        if (MarkdownRuntime::class === $class) {
+		            return new MarkdownRuntime(new DefaultMarkdown());
+		        }
+		    }
+		});
+
+		# Add Twig globals:
+		foreach( $config['twig'] as $key => $value )
+		{
+			$this->addTwigGlobal(
+				strtoupper($key),
+				$value
+			);
+		}
 	}
 
 	# Get the Twig instance:
@@ -78,7 +98,10 @@ class App
 				$file = $subFiles[0];
 			}
 
-			$sections[] = new Section($this, $file);
+			if( substr($file, -2, 2) != 'md' )
+			{
+				$sections[] = new Section($this, $file);
+			}
 		}
 
 		return $sections;
@@ -90,7 +113,6 @@ class App
 		$template = $this->getTwig()->load($template);
 
 		$data['app'] = $this;
-		$data['hello'] = 'world';
 		
 		echo $template->render($data);
 		exit(1);
@@ -111,5 +133,60 @@ class App
 		}
 
 		return $val;
+	}
+
+	# Add a new global to Twig:
+	public function addTwigGlobal( string $name, $value )
+	{
+		return $this->twig->addGlobal($name, $value);
+	}
+
+	# Output the sidebar:
+	public function outputSidebar()
+	{
+		$ulFlag = false;
+		$html = '';
+
+		foreach( $this->getSections() as $section )
+		{
+			if( $section->hasChildren() )
+			{
+				if( $ulFlag )
+				{
+					$html.= '</ul>';
+				}
+
+				$ulFlag = false;
+
+				$html.= '<div class="sidebar-group">';
+				$html.= '<h4 class="sidebar-group-title">'.$section->getTitle().'<ion-icon name="chevron-down"></ion-icon></h4>';
+				$html.= '<ul class="sidebar-menu">';
+
+				foreach( $section->getChildren() as $child )
+				{
+					$html.= '<li><a href="#'.$child->getId().'">'.$child->getTitle().'</a></li>';
+				}
+
+				$html.= '</ul>';
+				$html.= '</div>';
+
+			}
+			else
+			{
+				if( $ulFlag )
+				{
+					$html.= '<li><a href="#'.$section->getId().'">'.$section->getTitle().'</a></li>';
+				}
+				else
+				{
+					$html.= '<ul class="sidebar-menu">';
+					$html.= '<li><a href="#'.$section->getId().'">'.$section->getTitle().'</a></li>';
+
+					$ulFlag = true;
+				}
+			}
+		}
+
+		return $html;
 	}
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1f992a8535657895b6cf250f0ce21c4",
+    "content-hash": "7bbe2ae365e78f3a1afa15de7706b187",
     "packages": [
         {
             "name": "adbario/php-dot-notation",
@@ -100,6 +100,104 @@
                 "parser"
             ],
             "time": "2019-12-30T22:54:17+00:00"
+        },
+        {
+            "name": "erusev/parsedown-extra",
+            "version": "0.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown-extra.git",
+                "reference": "91ac3ff98f0cea243bdccc688df43810f044dcef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/91ac3ff98f0cea243bdccc688df43810f044dcef",
+                "reference": "91ac3ff98f0cea243bdccc688df43810f044dcef",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "^1.7.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ParsedownExtra": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "An extension of Parsedown that adds support for Markdown Extra.",
+            "homepage": "https://github.com/erusev/parsedown-extra",
+            "keywords": [
+                "markdown",
+                "markdown extra",
+                "parsedown",
+                "parser"
+            ],
+            "time": "2019-12-30T23:20:37+00:00"
+        },
+        {
+            "name": "minwork/array",
+            "version": "v1.13.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/minwork/array.git",
+                "reference": "8987cc4371a7890d46af3fd47740c88849cc81f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/minwork/array/zipball/8987cc4371a7890d46af3fd47740c88849cc81f9",
+                "reference": "8987cc4371a7890d46af3fd47740c88849cc81f9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Minwork\\Helper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christopher Kalkhoff",
+                    "email": "krzysztof.kalkhoff@gmail.com",
+                    "role": "Founder"
+                }
+            ],
+            "description": "Pack of advanced array functions specifically tailored for: associative (assoc) array, multidimensional array, array of objects and handling nested array elements",
+            "keywords": [
+                "Associative",
+                "array",
+                "arrays",
+                "assoc",
+                "helper",
+                "multidimensional",
+                "objects",
+                "php 7"
+            ],
+            "time": "2020-04-21T16:31:54+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -284,6 +382,63 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2020-05-20T08:37:50+00:00"
+        },
+        {
+            "name": "twig/markdown-extra",
+            "version": "v3.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/markdown-extra.git",
+                "reference": "1fe798d559665b64bda4b08eda10793427d7e3bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/markdown-extra/zipball/1fe798d559665b64bda4b08eda10793427d7e3bc",
+                "reference": "1fe798d559665b64bda4b08eda10793427d7e3bc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "twig/twig": "^2.4|^3.0"
+            },
+            "require-dev": {
+                "erusev/parsedown": "^1.7",
+                "league/commonmark": "^1.0",
+                "league/html-to-markdown": "^4.8",
+                "michelf/php-markdown": "^1.8",
+                "symfony/phpunit-bridge": "^4.4.9|^5.0.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Twig\\Extra\\Markdown\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "A Twig extension for Markdown",
+            "homepage": "https://twig.symfony.com",
+            "keywords": [
+                "html",
+                "markdown",
+                "twig"
+            ],
+            "time": "2020-08-05T14:54:08+00:00"
         },
         {
             "name": "twig/twig",
