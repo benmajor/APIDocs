@@ -1,0 +1,42 @@
+	
+			<div class="section-row">
+				<div class="section-content">
+
+					{% if section.isChild %}<h4 class="section-title">{% else %}<h3 class="section-title">{% endif %}
+						<a name="{{ section.id }}" id="{{ section.id }}"></a>
+						{{ section.title }}
+					{% if section.isChild %}</h4>{% else %}</h3>{% endif %}
+
+					{{ section.content|raw }}
+
+					{% if section.hasEndpoint %}
+					{% include 'components/endpoint.twig' %}
+					{% endif %}
+
+					{% if section.hasRequestParams %}
+					{% include 'components/request-params.twig' %}
+					{% endif %}
+
+					{% if section.hasResponseParams %}
+					{% include 'components/response-params.twig' %}
+					{% endif %}
+				</div>
+				<div class="section-example section-example-sticky">
+					{% if section.hasChildren %}
+						{% include 'examples/endpoint-list.twig' %}
+					{% else %}
+
+						{% if section.hasSidebar and section.getSidebarTemplate is not null %}
+						{% include section.getSidebarTemplate %}
+						{% endif %}
+
+						{% if section.hasRequest %}
+						{% include 'examples/request.twig' %}
+						{% endif %}
+
+						{% if section.hasResponse %}
+						{% include 'examples/response.twig' %}
+						{% endif %}
+					{% endif %}
+				</div>
+			</div>

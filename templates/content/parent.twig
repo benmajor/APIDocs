@@ -1,0 +1,21 @@
+		<section id="section_{{ section.getAttrID }}">
+			{% include 'content/section.twig' %}
+
+			{% if section.hasChildren %}
+			<div class="section-toggle">
+				<div class="section-toggle-button">
+		        	<a href="#" class="btn">Show <ion-icon name="chevron-down" role="img" class="md hydrated" aria-label="chevron down"></ion-icon></a>
+		        </div>
+				
+				{% for child in section.getChildren %}
+				
+				<hr />
+
+				{% set loopSection = section %}
+				{% set section = child %}
+				{% include 'content/section.twig' %}
+				{% set section = loopSection %}
+				{% endfor %}
+			</div>
+			{% endif %}
+		</section>
